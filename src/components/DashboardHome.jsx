@@ -1,4 +1,3 @@
-// src/components/DashboardHome.jsx
 import { Link } from "react-router-dom";
 import projects from "../data/projects";
 
@@ -11,7 +10,7 @@ const onHoldCount = projects.filter(
 
 function DashboardHome() {
   return (
-    <div>
+    <div className="px-2 md:px-0">
       <h1 className="text-3xl font-bold mb-2 flex items-center">
         <span className="mr-2">🚀</span> Welcome to the Dashboard
       </h1>
@@ -20,7 +19,7 @@ function DashboardHome() {
       </p>
 
       {/* Cards */}
-      <div className="grid grid-cols-3 gap-4 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
         <Link
           to="/projects"
           className="bg-white rounded-lg shadow p-6 text-center cursor-pointer transition hover:bg-[#2952e3] hover:text-white block"
@@ -45,9 +44,9 @@ function DashboardHome() {
       </div>
 
       {/* Projects Table */}
-      <div className="bg-white rounded-lg shadow p-6">
+      <div className="bg-white rounded-lg shadow p-6 overflow-x-auto">
         <h2 className="text-xl font-semibold mb-4">Recent Projects</h2>
-        <table className="w-full text-left">
+        <table className="w-full min-w-[400px] text-left">
           <thead>
             <tr>
               <th className="pb-2">Name</th>
